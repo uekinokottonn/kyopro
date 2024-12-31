@@ -1,0 +1,15 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+gamma = 2*np.pi
+x = np.linspace(-2, 2, 500)
+y = np.linspace(-2, 2, 500)
+X, Y = np.meshgrid(x, y)
+
+r = np.exp((2*np.pi*y)/gamma)
+
+plt.figure()
+counter = plt.contour(X, Y, r)
+plt.clabel(counter, inline=True)
+plt.grid(True)
+plt.show()
